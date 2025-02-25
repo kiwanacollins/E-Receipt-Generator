@@ -438,7 +438,8 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               <View className="w-50 p-5 flex" pdfMode={pdfMode}>
                 <EditableInput
                   className="dark bold right ml-60"
-                  value={invoice.currency}
+                  // value={invoice.currency}
+                  value='UGX'
                   // onChange={(value) => handleChange('currency', value)}
                   pdfMode={pdfMode}
                 />

@@ -159,7 +159,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               className="fs-20 bold"
               placeholder="Your Company"
               value={invoice.companyName}
-              // onChange={(value) => handleChange('companyName', value)}
+              onChange={(value) => handleChange('companyName', value)}
               pdfMode={pdfMode}
             />
             {/* <EditableInput
@@ -168,12 +168,12 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChange={(value) => handleChange('name', value)}
               pdfMode={pdfMode}
             /> */}
-            {/* <EditableInput
+            <EditableInput
               placeholder="Company's Address"
               value={invoice.companyAddress}
               onChange={(value) => handleChange('companyAddress', value)}
               pdfMode={pdfMode}
-            /> */}
+            />
             {/* <EditableInput
               placeholder="City, State Zip"
               value={invoice.companyAddress2}
@@ -191,7 +191,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             <EditableInput
               className="fs-45 right bold"
               placeholder="E-Receipt"
-              value={invoice.title}
+              value="E-Receipt"
               // onChange={(value) => handleChange('title', value)}
               pdfMode={pdfMode}
             />

@@ -19,7 +19,7 @@ export const initialInvoice: Invoice = {
   clientName: '',
   clientAddress: '',
   clientAddress2: '',
-  clientCountry: 'United States',
+  clientCountry: 'Uganda',
   invoiceTitleLabel: 'Invoice#',
   invoiceTitle: '',
   invoiceDateLabel: 'Invoice Date',

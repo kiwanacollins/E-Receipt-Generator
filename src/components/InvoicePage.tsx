@@ -202,7 +202,8 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           <View className="w-55" pdfMode={pdfMode}>
             <EditableInput
               className="bold dark mb-5"
-              value={invoice.billTo}
+              // value={invoice.billTo}
+              value='Sold To'
               // onChange={(value) => handleChange('Sold To', value)}
               pdfMode={pdfMode}
             />
@@ -214,7 +215,8 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             />
             <EditableInput
               placeholder="Client's Address"
-              value={invoice.clientAddress}
+              // value={invoice.clientAddress}
+              value='Client Address'
               onChange={(value) => handleChange('clientAddress', value)}
               pdfMode={pdfMode}
             />
@@ -226,7 +228,8 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             /> */}
             <EditableSelect
               options={countryList}
-              value={invoice.clientCountry}
+              // value={invoice.clientCountry}
+              value='Uganda'
               onChange={(value) => handleChange('clientCountry', value)}
               pdfMode={pdfMode}
             />

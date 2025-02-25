@@ -162,12 +162,12 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChange={(value) => handleChange('companyName', value)}
               pdfMode={pdfMode}
             />
-            {/* <EditableInput
+            <EditableInput
               placeholder="Your Name"
               value={invoice.name}
               onChange={(value) => handleChange('name', value)}
               pdfMode={pdfMode}
-            /> */}
+            />
             <EditableInput
               placeholder="Company's Address"
               value={invoice.companyAddress}

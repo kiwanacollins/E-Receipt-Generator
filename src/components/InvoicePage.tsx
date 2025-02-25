@@ -149,7 +149,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             <EditableFileImage
               className="logo"
               placeholder="Your Logo"
-              value={invoice.logo}
+              value={invoice.logo} 
               width={invoice.logoWidth}
               pdfMode={pdfMode}
               onChangeImage={(value) => handleChange('logo', value)}
@@ -192,7 +192,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               className="fs-45 right bold"
               placeholder="E-Receipt"
               value="E-Receipt"
-              // onChange={(value) => handleChange('title', value)}
+              onChange={(value) => handleChange('title', value)}
               pdfMode={pdfMode}
             />
           </View>

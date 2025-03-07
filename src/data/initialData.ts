@@ -27,7 +27,7 @@ export const initialInvoice: Invoice = {
   invoiceDueDateLabel: 'Due Date',
   invoiceDueDate: '',
   productLineDescription: 'Item Description',
-  productLineQuantity: 'Qty',
+  productLineQuantity: 'Qantity',
   productLineQuantityRate: 'Rate',
   productLineQuantityAmount: 'Amount',
   productLines: [

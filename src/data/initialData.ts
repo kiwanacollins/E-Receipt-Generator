@@ -46,5 +46,5 @@ export const initialInvoice: Invoice = {
   notesLabel: 'Quality Service is our Priority',
   notes: 'Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads, Programming, Software updates, Phone accessories, flashing and unlocking and Sales of all Mobile Phones.',
   termLabel: 'Terms & Conditions',
-  term: 'Phone should not go beyond 3 Months in a repair centre. <br> NOTE: Your device is our dedication.',
+  term: 'Phone should not go beyond 3 Months in a repair centre. Your device is our dedication.',
 }

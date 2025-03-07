@@ -15,7 +15,7 @@ const Download: FC<Props> = ({ data }) => {
   return (
     <div className={'download-pdf '}>
       <PDFDownloadLink
-        key="pdf"
+        key={`pdf-${Date.now()}`} // Add timestamp to force refresh
         document={<InvoicePage pdfMode={true} data={debounced} />}
         fileName={`BT Repair Centre ${data.invoiceDate}.pdf`}
         aria-label="Save PDF"

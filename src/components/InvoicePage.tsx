@@ -9,7 +9,7 @@ import Document from './Document'
 import Page from './Page'
 import View from './View'
 import Text from './Text'
-import { Font } from '@react-pdf/renderer'
+import { Font, Image } from '@react-pdf/renderer'
 import Download from './DownloadPDF'
 import { format } from 'date-fns/format'
 
@@ -510,16 +510,17 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               <Text className="bold fs-12" pdfMode={pdfMode}>Plot 13, Kampala,</Text>
               <Text className="bold fs-12" pdfMode={pdfMode}>Amadinda House</Text>
             </View>
+             <View className="flex-1" pdfMode={pdfMode}>
+              <Text className="bold fs-12 right" pdfMode={pdfMode}>P.O.BOX 34338</Text>
+              <Text className="bold fs-12 right" pdfMode={pdfMode}>Kampala Uganda</Text>
+            </View>
             <View className="flex-1" pdfMode={pdfMode}>
               <Text className="bold fs-12 center" pdfMode={pdfMode}>Tel:</Text>
               <Text className="bold fs-12 center" pdfMode={pdfMode}>+256 200 933 371</Text>
               <Text className="bold fs-12 center" pdfMode={pdfMode}>+256 706 395 757</Text>
               <Text className="bold fs-12 center" pdfMode={pdfMode}>256 772 560 792</Text>
             </View>
-            <View className="flex-1" pdfMode={pdfMode}>
-              <Text className="bold fs-12 right" pdfMode={pdfMode}>P.O.BOX 34338</Text>
-              <Text className="bold fs-12 right" pdfMode={pdfMode}>Kampala Uganda</Text>
-            </View>
+           
           </View>
     
           
@@ -536,15 +537,28 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             </Text>
             
             <View className="height-60" pdfMode={pdfMode}>
-              <EditableFileImage
-                className="signature-image"
-                placeholder="BT Repair Signature"
-                value={invoice.signature || ''}
-                width={150}
-                pdfMode={pdfMode}
-                onChangeImage={(value) => handleChange('signature', value)}
-              
-              />
+              {pdfMode ? (
+                // For PDF mode, use the proper Image component from @react-pdf/renderer
+                invoice.signature ? (
+                  <Image
+                    src={invoice.signature}
+                    style={{
+                      width: '60px',
+                      maxHeight: '60px',
+                    }}
+                  />
+                ) : null
+              ) : (
+                // For edit mode, use the EditableFileImage component
+                <EditableFileImage
+                  className="signature-image"
+                  placeholder="BT Repair Signature"
+                  value={invoice.signature || ''}
+                  width={150}
+                  pdfMode={false}
+                  onChangeImage={(value) => handleChange('signature', value)}
+                />
+              )}
             </View>
             
             <Text 

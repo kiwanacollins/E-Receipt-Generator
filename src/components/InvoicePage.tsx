@@ -155,13 +155,12 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChangeImage={(value) => handleChange('logo', value)}
               onChangeWidth={(value) => handleChange('logoWidth', value)}
             />
-            <EditableInput
-              className="fs-20 bold"
-              placeholder="Your Company"
-              value={invoice.companyName}
-              onChange={(value) => handleChange('companyName', value)}
+             <Text 
+              className="bold fs-20 signature-"
               pdfMode={pdfMode}
-            />
+            >
+              BT REPAIR CENTRE
+            </Text>
             {/* Other commented inputs */}
           </View>
           {/* Fixed the closing div to View */}
@@ -178,32 +177,25 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
 
         <View className="flex mt-40" pdfMode={pdfMode}>
           <View className="w-55" pdfMode={pdfMode}>
-            <EditableInput
-              className="bold dark mb-5"
-              // value={invoice.billTo}
-              value='Clients Details'
-              // onChange={(value) => handleChange('Sold To', value)}
+            <Text 
+              className="bold mb-5 signature-title"
               pdfMode={pdfMode}
-            />
+            >
+              Clients Details
+            </Text>
             <EditableInput
               placeholder="Your Client's Name"
               value={invoice.clientName}
               onChange={(value) => handleChange('clientName', value)}
               pdfMode={pdfMode}
             />
-            <EditableInput
-              placeholder="Client's Address"
-              // value={invoice.clientAddress}
-              value='Client Address'
-              onChange={(value) => handleChange('clientAddress', value)}
+             <Text 
+              className="bold mb-5 signature-title"
               pdfMode={pdfMode}
-            />
-            {/* <EditableInput
-              placeholder="City, State Zip"
-              value={invoice.clientAddress2}
-              onChange={(value) => handleChange('clientAddress2', value)}
-              pdfMode={pdfMode}
-            /> */}
+            >
+             Client Address
+            </Text>
+           
             <EditableSelect
               options={countryList}
               value={invoice.clientCountry}
@@ -232,13 +224,12 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             </View>
             <View className="flex mb-5" pdfMode={pdfMode}>
               <View className="w-40" pdfMode={pdfMode}>
-                <EditableInput
-                  className="bold"
-                  // value={invoice.invoiceDateLabel}
-                  value='Date'
-                  // onChange={(value) => handleChange('invoiceDateLabel', value)}
-                  pdfMode={pdfMode}
-                />
+                 <Text 
+              className="bold mb-5 signature-title"
+              pdfMode={pdfMode}
+            >
+             Date
+            </Text>
               </View>
               <View className="w-60" pdfMode={pdfMode}>
                 <EditableCalendarInput
@@ -282,36 +273,36 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
 
         <View className="mt-30 bg-dark flex" pdfMode={pdfMode}>
           <View className="w-48 p-4-8" pdfMode={pdfMode}>
-            <EditableInput
-              className="white bold"
-              value={invoice.productLineDescription}
-              // onChange={(value) => handleChange('productLineDescription', value)}
+             <Text 
+              className="bold mb-5 white"
               pdfMode={pdfMode}
-            />
+            >
+              Product Description
+            </Text>
           </View>
           <View className="w-17 p-4-8" pdfMode={pdfMode}>
-            <EditableInput
-              className="white bold right"
-              value='Quantity'
-              // onChange={(value) => handleChange('productLineQuantity', value)}
+            <Text 
+              className="bold mb-5 white"
               pdfMode={pdfMode}
-            />
+            >
+              Quantity
+            </Text>
           </View>
           <View className="w-17 p-4-8" pdfMode={pdfMode}>
-            <EditableInput
-              className="white bold right"
-              value={invoice.productLineQuantityRate}
-              // onChange={(value) => handleChange('productLineQuantityRate', value)}
+            <Text 
+              className="bold mb-5 white"
               pdfMode={pdfMode}
-            />
+            >
+             Rate
+            </Text>
           </View>
           <View className="w-18 p-4-8" pdfMode={pdfMode}>
-            <EditableInput
-              className="white bold right"
-              value={invoice.productLineQuantityAmount}
-              // onChange={(value) => handleChange('productLineQuantityAmount', value)}
+            <Text 
+              className="bold mb-5 white"
               pdfMode={pdfMode}
-            />
+            >
+             Amount
+            </Text>
           </View>
         </View>
 
@@ -492,7 +483,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                 width={150}
                 pdfMode={pdfMode}
                 onChangeImage={(value) => handleChange('signature', value)}
-                onChangeWidth={(value) => {/* Ignore width changes for signature */}}
+              
               />
             </View>
             
@@ -500,7 +491,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               className="mt-5 italic signature-name"
               pdfMode={pdfMode}
             >
-              BT Repair
+              {/* BT Repair */}
             </Text>
           </View>
         </View>

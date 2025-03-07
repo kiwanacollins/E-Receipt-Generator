@@ -397,7 +397,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             )}
           </View>
           <View className="w-50 mt-20" pdfMode={pdfMode}>
-            <View className="flex" pdfMode={pdfMode}>
+            {/* <View className="flex" pdfMode={pdfMode}>
               <View className="w-50 p-5" pdfMode={pdfMode}>
                 <EditableInput
                   value={invoice.subTotalLabel}
@@ -410,7 +410,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                   {subTotal?.toFixed(2)}
                 </Text>
               </View>
-            </View>
+            </View> */}
             {/* <View className="flex" pdfMode={pdfMode}>
               <View className="w-50 p-5" pdfMode={pdfMode}>
                 <EditableInput
@@ -444,7 +444,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                 />
                 <Text className="right bold dark w-auto" pdfMode={pdfMode}>
                   {(typeof subTotal !== 'undefined' && typeof saleTax !== 'undefined'
-                    ? subTotal + saleTax
+                    ? subTotal //+ saleTax
                     : 0
                   ).toFixed(2)}
                 </Text>

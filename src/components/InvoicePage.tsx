@@ -197,8 +197,8 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
              Client Address
             </Text>
            
-            <EditableSelect
-              options={countryList}
+            <EditableInput
+              placeholder="Client's Address"
               value={invoice.clientCountry}
               onChange={(value) => handleChange('clientCountry', value)}
               pdfMode={pdfMode}

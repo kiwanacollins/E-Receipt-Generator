@@ -168,12 +168,12 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChange={(value) => handleChange('name', value)}
               pdfMode={pdfMode}
             /> */}
-            <EditableInput
+            {/* <EditableInput
               placeholder="Company's Address"
               value={invoice.companyAddress}
               onChange={(value) => handleChange('companyAddress', value)}
               pdfMode={pdfMode}
-            />
+            /> */}
             {/* <EditableInput
               placeholder="City, State Zip"
               value={invoice.companyAddress2}
@@ -307,15 +307,15 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             <EditableInput
               className="white bold"
               value={invoice.productLineDescription}
-              onChange={(value) => handleChange('productLineDescription', value)}
+              // onChange={(value) => handleChange('productLineDescription', value)}
               pdfMode={pdfMode}
             />
           </View>
           <View className="w-17 p-4-8" pdfMode={pdfMode}>
             <EditableInput
               className="white bold right"
-              value={invoice.productLineQuantity}
-              onChange={(value) => handleChange('productLineQuantity', value)}
+              value='Quantity'
+              // onChange={(value) => handleChange('productLineQuantity', value)}
               pdfMode={pdfMode}
             />
           </View>
@@ -323,7 +323,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             <EditableInput
               className="white bold right"
               value={invoice.productLineQuantityRate}
-              onChange={(value) => handleChange('productLineQuantityRate', value)}
+              // onChange={(value) => handleChange('productLineQuantityRate', value)}
               pdfMode={pdfMode}
             />
           </View>
@@ -331,7 +331,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             <EditableInput
               className="white bold right"
               value={invoice.productLineQuantityAmount}
-              onChange={(value) => handleChange('productLineQuantityAmount', value)}
+              // onChange={(value) => handleChange('productLineQuantityAmount', value)}
               pdfMode={pdfMode}
             />
           </View>
@@ -454,34 +454,26 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
         </View>
 
         <View className="mt-20" pdfMode={pdfMode}>
-          <EditableInput
-            className="bold w-100"
-            value={invoice.notesLabel}
-            onChange={(value) => handleChange('notesLabel', value)}
-            pdfMode={pdfMode}
-          />
-          <EditableTextarea
-            className="w-100"
-            rows={2}
-            value={invoice.notes}
-            onChange={(value) => handleChange('notes', value)}
-            pdfMode={pdfMode}
-          />
+          <h3>Quality Service is our Priority</h3>
+         <h4>Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads,
+           Programming, Software updates,
+           Phone accessories, flashing and unlocking and Sales of all Mobile Phones.</h4>
         </View>
         <View className="mt-20" pdfMode={pdfMode}>
-          <EditableInput
-            className="bold w-100"
-            value={invoice.termLabel}
-            onChange={(value) => handleChange('termLabel', value)}
-            pdfMode={pdfMode}
-          />
-          <EditableTextarea
-            className="w-100"
-            rows={2}
-            value={invoice.term}
-            onChange={(value) => handleChange('term', value)}
-            pdfMode={pdfMode}
-          />
+         <h3>Terms and Conditions</h3>
+         <h4>Phone should not go beyond 3 Months in a repair centre.
+          <br />NOTE: Your device is our dedication.</h4>
+        </View>
+
+        <View className="mt-20" pdfMode={pdfMode}>
+          <hr />
+          <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <h4>Plot 13, Kampala, <br />Amadinda House</h4>
+               <h4>Tel: <br />+256 200 933 371 <br />+256 706 395 757 <br />256 772 560 792</h4>
+          <h4>P.O.BOX 34338 <br />Kampala Uganda</h4>
+          </div>
+
+
         </View>
       </Page>
     </Document>

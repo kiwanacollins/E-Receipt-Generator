@@ -2,11 +2,9 @@ import { FC, useState, useEffect } from 'react'
 import { Invoice, ProductLine } from '../data/types'
 import { initialInvoice, initialProductLine } from '../data/initialData'
 import EditableInput from './EditableInput'
-import EditableSelect from './EditableSelect'
 import EditableTextarea from './EditableTextarea'
 import EditableCalendarInput from './EditableCalendarInput'
 import EditableFileImage from './EditableFileImage'
-import countryList from '../data/countryList'
 import Document from './Document'
 import Page from './Page'
 import View from './View'
@@ -479,7 +477,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
         <View className="mt-10" pdfMode={pdfMode}>
           <Text className="bold mb-5" pdfMode={pdfMode}>Amount in words:</Text>
           <Text className="mb-10" pdfMode={pdfMode}>
-            {convertNumberToWords(typeof subTotal !== 'undefined' ? Math.round(subTotal) : 0)} Uganda Shillings Only
+            {`${convertNumberToWords(typeof subTotal !== 'undefined' ? Math.round(subTotal) : 0)} Uganda Shillings Only`}
           </Text>
         </View>
         <hr />

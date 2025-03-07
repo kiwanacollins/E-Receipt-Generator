@@ -47,4 +47,5 @@ export const initialInvoice: Invoice = {
   notes: 'Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads, Programming, Software updates, Phone accessories, flashing and unlocking and Sales of all Mobile Phones.',
   termLabel: 'Terms & Conditions',
   term: 'Phone should not go beyond 3 Months in a repair centre. Your device is our dedication.',
+  signature: '', // Initialize with empty string
 }

@@ -162,31 +162,9 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChange={(value) => handleChange('companyName', value)}
               pdfMode={pdfMode}
             />
-            {/* <EditableInput
-              placeholder="Your Name"
-              value={invoice.name}
-              onChange={(value) => handleChange('name', value)}
-              pdfMode={pdfMode}
-            /> */}
-            {/* <EditableInput
-              placeholder="Company's Address"
-              value={invoice.companyAddress}
-              onChange={(value) => handleChange('companyAddress', value)}
-              pdfMode={pdfMode}
-            /> */}
-            {/* <EditableInput
-              placeholder="City, State Zip"
-              value={invoice.companyAddress2}
-              onChange={(value) => handleChange('companyAddress2', value)}
-              pdfMode={pdfMode}
-            /> */}
-            {/* <EditableSelect
-              options={countryList}
-              value={invoice.companyCountry}
-              onChange={(value) => handleChange('companyCountry', value)}
-              pdfMode={pdfMode}
-            /> */}
+            {/* Other commented inputs */}
           </View>
+          {/* Fixed the closing div to View */}
           <View className="w-50" pdfMode={pdfMode}>
             <EditableInput
               className="fs-45 right bold"
@@ -444,7 +422,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                 />
                 <Text className="right bold dark w-auto" pdfMode={pdfMode}>
                   {(typeof subTotal !== 'undefined' && typeof saleTax !== 'undefined'
-                    ? subTotal //+ saleTax
+                    ? subTotal
                     : 0
                   ).toFixed(2)}
                 </Text>
@@ -454,26 +432,78 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
         </View>
 
         <View className="mt-20" pdfMode={pdfMode}>
-          <h3>Quality Service is our Priority</h3>
-         <h4>Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads,
-           Programming, Software updates,
-           Phone accessories, flashing and unlocking and Sales of all Mobile Phones.</h4>
+          <Text className="bold mb-5 fs-16" pdfMode={pdfMode}>Quality Service is our Priority</Text>
+          <Text className="mb-10 fs-12" pdfMode={pdfMode}>
+            Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads,
+            Programming, Software updates,
+            Phone accessories, flashing and unlocking and Sales of all Mobile Phones.
+          </Text>
         </View>
+        
         <View className="mt-20" pdfMode={pdfMode}>
-         <h3>Terms and Conditions</h3>
-         <h4>Phone should not go beyond 3 Months in a repair centre.
-          <br />NOTE: Your device is our dedication.</h4>
+          <Text className="bold mb-5 fs-16" pdfMode={pdfMode}>Terms and Conditions</Text>
+          <Text className="fs-12" pdfMode={pdfMode}>
+            Phone should not go beyond 3 Months in a repair centre.
+          </Text>
+          <Text className="mb-10 fs-12" pdfMode={pdfMode}>
+            NOTE: Your device is our dedication.
+          
+          </Text>
         </View>
-
+                    <hr />
         <View className="mt-20" pdfMode={pdfMode}>
-          <hr />
-          <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <h4>Plot 13, Kampala, <br />Amadinda House</h4>
-               <h4>Tel: <br />+256 200 933 371 <br />+256 706 395 757 <br />256 772 560 792</h4>
-          <h4>P.O.BOX 34338 <br />Kampala Uganda</h4>
-          </div>
-
-
+          <View className="border-top mb-10" pdfMode={pdfMode}/>
+          
+          <View className="flex" pdfMode={pdfMode}>
+            <View className="flex-1" pdfMode={pdfMode}>
+              <Text className="bold fs-12" pdfMode={pdfMode}>
+                Plot 13, Kampala,{'\n'}Amadinda House
+              </Text>
+            </View>
+            <View className="flex-1" pdfMode={pdfMode}>
+              <Text className="bold fs-12 center" pdfMode={pdfMode}>
+                Tel:{'\n'}+256 200 933 371{'\n'}+256 706 395 757{'\n'}256 772 560 792
+              </Text>
+            </View>
+            <View className="flex-1" pdfMode={pdfMode}>
+              <Text className="bold fs-12 right" pdfMode={pdfMode}>
+                P.O.BOX 34338{'\n'}Kampala Uganda
+              </Text>
+            </View>
+          </View>
+    
+          
+          {/* BT REPAIR SIGNATURE IMAGE INSERTION WITH A BOX AROUND IT */}
+          <View 
+            className="signature-container border-box mt-20 max-width-300" 
+            pdfMode={pdfMode}
+          >
+            <Text 
+              className="bold mb-5 signature-title"
+              pdfMode={pdfMode}
+            >
+              Authorized Signature
+            </Text>
+            
+            <View className="height-60" pdfMode={pdfMode}>
+              <EditableFileImage
+                className="signature-image"
+                placeholder="BT Repair Signature"
+                value={invoice.signature || ''}
+                width={150}
+                pdfMode={pdfMode}
+                onChangeImage={(value) => handleChange('signature', value)}
+                onChangeWidth={(value) => {/* Ignore width changes for signature */}}
+              />
+            </View>
+            
+            <Text 
+              className="mt-5 italic signature-name"
+              pdfMode={pdfMode}
+            >
+              {/* BT Repair */}
+            </Text>
+          </View>
         </View>
       </Page>
     </Document>

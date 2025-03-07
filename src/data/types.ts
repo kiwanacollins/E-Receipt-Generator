@@ -46,6 +46,7 @@ export const TInvoice = z.object({
   notes: z.string(),
   termLabel: z.string(),
   term: z.string(),
+  signature: z.string().optional(), // Add signature field as optional
 })
 
 export type Invoice = TypeOf<typeof TInvoice>

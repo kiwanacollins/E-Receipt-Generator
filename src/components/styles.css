@@ -1,0 +1,70 @@
+/* Additional styles for our components */
+.border-box {
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.border-top {
+  border-top: 1px solid #000000;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.height-60 {
+  height: 60px;
+}
+
+.max-width-300 {
+  max-width: 300px;
+}

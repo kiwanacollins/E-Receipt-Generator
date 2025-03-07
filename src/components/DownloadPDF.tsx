@@ -22,7 +22,7 @@ const Download: FC<Props> = ({ data }) => {
         title="Save PDF"
         className="download-pdf__pdf"
       ></PDFDownloadLink>
-      <p>Save PDF</p>
+      {/* <p>Save PDF</p> */}
 
       {/* <button
         onClick={handleSaveTemplate}

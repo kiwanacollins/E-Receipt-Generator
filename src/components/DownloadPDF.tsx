@@ -17,7 +17,7 @@ const Download: FC<Props> = ({ data }) => {
       <PDFDownloadLink
         key="pdf"
         document={<InvoicePage pdfMode={true} data={debounced} />}
-        fileName={`Reciept.pdf`}
+        fileName={`Reciept/Invoice.pdf`}
         aria-label="Save PDF"
         title="Save PDF"
         className="download-pdf__pdf"

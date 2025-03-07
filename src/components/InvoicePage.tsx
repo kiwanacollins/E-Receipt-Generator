@@ -523,8 +523,6 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
            
           </View>
     
-          
-          {/* BT REPAIR SIGNATURE IMAGE INSERTION WITH A BOX AROUND IT */}
           <View 
             className="signature-container border-box mt-20 max-width-300" 
             pdfMode={pdfMode}

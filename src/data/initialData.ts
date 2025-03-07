@@ -3,7 +3,7 @@ import { ProductLine, Invoice } from './types'
 export const initialProductLine: ProductLine = {
   description: '',
   quantity: '1',
-  rate: '0.00',
+  rate: '0', // Changed from '0.00' to '0'
 }
 
 export const initialInvoice: Invoice = {
@@ -34,7 +34,7 @@ export const initialInvoice: Invoice = {
     {
       description: 'Phone name',
       quantity: '2',
-      rate: '100.00',
+      rate: '100', // Changed from '100.00' to '100'
     },
     { ...initialProductLine },
     { ...initialProductLine },

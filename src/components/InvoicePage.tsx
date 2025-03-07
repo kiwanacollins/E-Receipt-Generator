@@ -108,7 +108,8 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
     const rateNumber = parseFloat(rate)
     const amount = quantityNumber && rateNumber ? quantityNumber * rateNumber : 0
 
-    return amount.toFixed(2)
+    // Return as a whole number without decimals
+    return Math.round(amount).toString()
   }
 
   useEffect(() => {
@@ -396,26 +397,25 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             </View> */}
             <View className="flex bg-gray p-5" pdfMode={pdfMode}>
               <View className="w-50 p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  className="bold"
-                  value={invoice.totalLabel}
-                  // onChange={(value) => handleChange('totalLabel', value)}
-                  pdfMode={pdfMode}
-                />
+                <Text 
+              className="bold mb-5"
+              pdfMode={pdfMode}
+            >
+             Total
+            </Text>
               </View>
               <View className="w-50 p-5 flex" pdfMode={pdfMode}>
-                <EditableInput
-                  className="dark bold right ml-60"
-                  // value={invoice.currency}
-                  value='UGX'
-                  // onChange={(value) => handleChange('currency', value)}
-                  pdfMode={pdfMode}
-                />
+                <Text 
+              className="bold mb-5"
+              pdfMode={pdfMode}
+            >
+             UGX
+            </Text>
                 <Text className="right bold dark w-auto" pdfMode={pdfMode}>
                   {(typeof subTotal !== 'undefined' && typeof saleTax !== 'undefined'
-                    ? subTotal
+                    ? Math.round(subTotal)
                     : 0
-                  ).toFixed(2)}
+                  ).toString()}
                 </Text>
               </View>
             </View>

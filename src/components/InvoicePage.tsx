@@ -191,7 +191,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             <EditableInput
               className="fs-45 right bold"
               placeholder="Receipt/Invoice"
-              value="Receipt/Invoice "
+              value={invoice.title}
               onChange={(value) => handleChange('title', value)}
               pdfMode={pdfMode}
             />

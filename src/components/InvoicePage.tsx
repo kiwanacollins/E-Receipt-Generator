@@ -140,6 +140,59 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
     }
   }, [onChange, invoice])
 
+  // Function to convert numbers to words - fixed to handle hundreds correctly
+  const convertNumberToWords = (num: number): string => {
+    const ones = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 
+                'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 
+                'Seventeen', 'Eighteen', 'Nineteen'];
+    const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+    
+    if (num === 0) return 'Zero';
+    
+    function convertLessThanOneThousand(num: number): string {
+      if (num === 0) return '';
+      
+      if (num < 20) {
+        return ones[num];
+      }
+      
+      if (num < 100) {
+        const ten = Math.floor(num / 10);
+        const one = num % 10;
+        return tens[ten] + (one > 0 ? '-' + ones[one] : '');
+      }
+      
+      const hundred = Math.floor(num / 100);
+      const remainder = num % 100;
+      
+      return ones[hundred] + ' Hundred' + (remainder > 0 ? ' ' + convertLessThanOneThousand(remainder) : '');
+    }
+    
+    let words = '';
+    const billion = Math.floor(num / 1000000000);
+    const million = Math.floor((num % 1000000000) / 1000000);
+    const thousand = Math.floor((num % 1000000) / 1000);
+    const remainder = num % 1000;
+    
+    if (billion) {
+      words += convertLessThanOneThousand(billion) + ' Billion ';
+    }
+    
+    if (million) {
+      words += convertLessThanOneThousand(million) + ' Million ';
+    }
+    
+    if (thousand) {
+      words += convertLessThanOneThousand(thousand) + ' Thousand ';
+    }
+    
+    if (remainder || words === '') {
+      words += convertLessThanOneThousand(remainder);
+    }
+    
+    return words.trim();
+  };
+
   return (
     <Document pdfMode={pdfMode}>
       <Page className="invoice-wrapper" pdfMode={pdfMode}>
@@ -421,6 +474,15 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             </View>
           </View>
         </View>
+
+        {/* Add the amount in words section */}
+        <View className="mt-10" pdfMode={pdfMode}>
+          <Text className="bold mb-5" pdfMode={pdfMode}>Amount in words:</Text>
+          <Text className="mb-10" pdfMode={pdfMode}>
+            {convertNumberToWords(typeof subTotal !== 'undefined' ? Math.round(subTotal) : 0)} Uganda Shillings Only
+          </Text>
+        </View>
+        <hr />
 
         <View className="mt-20" pdfMode={pdfMode}>
           <Text className="bold mb-5 fs-16" pdfMode={pdfMode}>Quality Service is our Priority</Text>

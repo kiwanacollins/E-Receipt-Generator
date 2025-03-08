@@ -4,6 +4,8 @@ const colorDark = '#222'
 const colorDark2 = '#666'
 const colorGray = '#e3e3e3'
 const colorWhite = '#fff'
+const colorRed = '#f03434'
+const colorBlue = '#3674B5'  // Updated to match the SCSS variable
 
 const styles: CSSClasses = {
   dark: {
@@ -14,12 +16,28 @@ const styles: CSSClasses = {
     color: colorWhite,
   },
 
+  red: {
+    color: colorRed,
+  },
+
+  blue: {
+    color: colorBlue,
+  },
+
+  'bg-blue': {
+    backgroundColor: colorBlue,  // Updated to use the colorBlue variable
+  },
+
   'bg-dark': {
     backgroundColor: colorDark2,
   },
 
   'bg-gray': {
     backgroundColor: colorGray,
+  },
+
+  'bg-red': {
+    backgroundColor: colorRed,
   },
 
   flex: {

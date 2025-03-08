@@ -209,14 +209,14 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChangeWidth={(value) => handleChange('logoWidth', value)}
             />
             <Text 
-              className="bold fs-20 text-red-600 signature-"
+              className="bold fs-20 red"
               pdfMode={pdfMode}
             >
               BT REPAIR CENTRE
             </Text>
 
                <View className="mt-20" pdfMode={pdfMode}>
-          <Text className="bold mb-5 fs-16 text-red-600" pdfMode={pdfMode}>Quality Service is our Priority</Text>
+          <Text className="bold mb-5 fs-16 red" pdfMode={pdfMode}>Quality Service is our Priority</Text>
           <Text className="mb-10 fs-12" pdfMode={pdfMode}>
             Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads,
             Programming, Software updates,
@@ -401,7 +401,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           </View>
         </View>
 
-        <View className="mt-30 bg-dark flex" pdfMode={pdfMode}>
+        <View className="mt-30 bg-blue flex" pdfMode={pdfMode}>
           <View className="w-48 p-4-8" pdfMode={pdfMode}>
              <Text 
               className="bold mb-5 white"

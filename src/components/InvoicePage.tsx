@@ -610,8 +610,8 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                   <Image
                     src={invoice.signature}
                     style={{
-                      width: '60px',
-                      maxHeight: '60px',
+                      width: '360px',
+                      maxHeight: '360px',
                     }}
                   />
                 ) : null
@@ -621,7 +621,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                   className="signature-image"
                   placeholder="BT Repair Signature"
                   value={invoice.signature || ''}
-                  width={450}
+                  width={150}
                   pdfMode={false}
                   onChangeImage={(value) => handleChange('signature', value)}
                 />

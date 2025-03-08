@@ -47,6 +47,9 @@ export const TInvoice = z.object({
   termLabel: z.string(),
   term: z.string(),
   signature: z.string().optional(), // Add signature field as optional
+  phoneImage1: z.string().optional(), // Add phone image 1 field as optional
+  phoneImage2: z.string().optional(), // Add phone image 2 field as optional
+  // phoneImage3: z.string().optional(), // Add phone image 3 field as optional
 })
 
 export type Invoice = TypeOf<typeof TInvoice>

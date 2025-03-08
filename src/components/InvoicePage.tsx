@@ -5,7 +5,8 @@ import EditableInput from './EditableInput'
 import EditableTextarea from './EditableTextarea'
 import EditableCalendarInput from './EditableCalendarInput'
 import EditableFileImage from './EditableFileImage'
-import Document from './Document'
+// Fix Document import - ensure it's correctly imported
+import MyDocument from './Document'
 import Page from './Page'
 import View from './View'
 import Text from './Text'
@@ -192,7 +193,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
   };
 
   return (
-    <Document pdfMode={pdfMode}>
+    <MyDocument pdfMode={pdfMode}>
       <Page className="invoice-wrapper" pdfMode={pdfMode}>
         {!pdfMode && <Download data={invoice} setData={(d) => setInvoice(d)} />}
 
@@ -207,14 +208,25 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChangeImage={(value) => handleChange('logo', value)}
               onChangeWidth={(value) => handleChange('logoWidth', value)}
             />
-             <Text 
-              className="bold fs-20 signature-"
+            <Text 
+              className="bold fs-20 text-red-600 signature-"
               pdfMode={pdfMode}
             >
               BT REPAIR CENTRE
             </Text>
+
+               <View className="mt-20" pdfMode={pdfMode}>
+          <Text className="bold mb-5 fs-16 text-red-600" pdfMode={pdfMode}>Quality Service is our Priority</Text>
+          <Text className="mb-10 fs-12" pdfMode={pdfMode}>
+            Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads,
+            Programming, Software updates,
+            Phone accessories, flashing and unlocking and Sales of all Mobile Phones.
+          </Text>
+        </View>
+
             {/* Other commented inputs */}
           </View>
+          
           {/* Fixed the closing div to View */}
           <View className="w-50" pdfMode={pdfMode}>
             <EditableInput
@@ -224,8 +236,61 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChange={(value) => handleChange('title', value)}
               pdfMode={pdfMode}
             />
+
+            
+          <View className="mt-10" pdfMode={pdfMode}></View>
+            <Text className="bold mb-5" pdfMode={pdfMode}>
+              {/* Phone Images */}
+            </Text>
+            <View className="flex" pdfMode={pdfMode}>
+              <View className="w-50 pr-10" pdfMode={pdfMode}>
+                {pdfMode && invoice.phoneImage1 ? (
+                  <Image
+                    src={invoice.phoneImage1}
+                    style={{
+                      width: '50px',
+                      maxHeight: '50px',
+                    }}
+                  />
+                ) : (
+                  <EditableFileImage
+                    className="phone-image"
+                    placeholder="Upload Phone Image 1"
+                    value={invoice.phoneImage1 || ''}
+                    width={150}
+                    pdfMode={false}
+                    onChangeImage={(value) => handleChange('phoneImage1', value)}
+                  />
+                )}
+              </View>
+              <View className="w-50" pdfMode={pdfMode}>
+                {pdfMode && invoice.phoneImage2 ? (
+                  <Image
+                    src={invoice.phoneImage2}
+                    style={{
+                      width: '50px',
+                      maxHeight: '50px',
+                    }}
+                  />
+                ) : (
+                  <EditableFileImage
+                    className="phone-image"
+                    placeholder="Upload Phone Image 2"
+                    value={invoice.phoneImage2 || ''}
+                    width={150}
+                    pdfMode={false}
+                    onChangeImage={(value) => handleChange('phoneImage2', value)}
+                  />
+                )}
+            </View>
+
+
+          </View>
+
           </View>
         </View>
+
+        
 
         <View className="flex mt-40" pdfMode={pdfMode}>
           <View className="w-55" pdfMode={pdfMode}>
@@ -481,15 +546,6 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           </Text>
         </View>
         <hr />
-
-        <View className="mt-20" pdfMode={pdfMode}>
-          <Text className="bold mb-5 fs-16" pdfMode={pdfMode}>Quality Service is our Priority</Text>
-          <Text className="mb-10 fs-12" pdfMode={pdfMode}>
-            Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads,
-            Programming, Software updates,
-            Phone accessories, flashing and unlocking and Sales of all Mobile Phones.
-          </Text>
-        </View>
         
         <View className="mt-20" pdfMode={pdfMode}>
           <Text className="bold mb-5 fs-16" pdfMode={pdfMode}>Terms and Conditions</Text>
@@ -568,7 +624,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           </View>
         </View>
       </Page>
-    </Document>
+    </MyDocument>
   )
 }
 

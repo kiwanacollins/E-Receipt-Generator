@@ -298,10 +298,23 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               className="bold mb-5 signature-title"
               pdfMode={pdfMode}
             >
-              Clients Details
+              Name
             </Text>
             <EditableInput
-              placeholder="Your Client's Name"
+              placeholder="Client's Name"
+              value={invoice.clientName}
+              onChange={(value) => handleChange('clientName', value)}
+              pdfMode={pdfMode}
+            />
+
+              <Text 
+              className="bold mb-5 signature-title"
+              pdfMode={pdfMode}
+            >
+              Phone Number
+            </Text>
+            <EditableInput
+              placeholder="Client's Contact"
               value={invoice.clientName}
               onChange={(value) => handleChange('clientName', value)}
               pdfMode={pdfMode}

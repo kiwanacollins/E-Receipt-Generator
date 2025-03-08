@@ -586,7 +586,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             <View className="flex-1" pdfMode={pdfMode}>
               <Text className="bold fs-12 center" pdfMode={pdfMode}>Tel:</Text>
               <Text className="bold fs-12 center" pdfMode={pdfMode}>+256 200 933 371</Text>
-              <Text className="bold fs-12 center" pdfMode={pdfMode}>+256 706 395 757</Text>
+              <Text className="bold fs-12 center" pdfMode={pdfMode}>+256 702 560 792</Text>
               <Text className="bold fs-12 center" pdfMode={pdfMode}>256 772 560 792</Text>
             </View>
            

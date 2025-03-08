@@ -24,6 +24,7 @@ export const TInvoice = z.object({
   companyCountry: z.string(),
   billTo: z.string(),
   clientName: z.string(),
+  clientContact: z.string(), // Add this new field
   clientAddress: z.string(),
   clientAddress2: z.string(),
   clientCountry: z.string(),

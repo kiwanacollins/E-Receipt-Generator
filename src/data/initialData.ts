@@ -17,6 +17,7 @@ export const initialInvoice: Invoice = {
   companyCountry: 'Uganda',
   billTo: 'Bill To:',
   clientName: '',
+  clientContact: '', // Add this new field
   clientAddress: '',
   clientAddress2: '',
   clientCountry: 'Uganda',

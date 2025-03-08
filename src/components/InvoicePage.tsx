@@ -621,7 +621,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                   className="signature-image"
                   placeholder="BT Repair Signature"
                   value={invoice.signature || ''}
-                  width={150}
+                  width={350}
                   pdfMode={false}
                   onChangeImage={(value) => handleChange('signature', value)}
                 />

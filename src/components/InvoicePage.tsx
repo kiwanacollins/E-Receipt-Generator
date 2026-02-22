@@ -4,7 +4,6 @@ import { initialInvoice, initialProductLine } from '../data/initialData'
 import EditableInput from './EditableInput'
 import EditableTextarea from './EditableTextarea'
 import EditableCalendarInput from './EditableCalendarInput'
-import EditableFileImage from './EditableFileImage'
 // Fix Document import - ensure it's correctly imported
 import MyDocument from './Document'
 import Page from './Page'
@@ -578,7 +577,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           </View>
     
           <View 
-            className="signature-container border-box mt-20 max-width-300" 
+            className="signature-container border-box mt-5 max-width-300"
             pdfMode={pdfMode}
           >
             <Text 
@@ -590,26 +589,9 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             
             <View className="height-60" pdfMode={pdfMode}>
               {pdfMode ? (
-                // For PDF mode, use the proper Image component from @react-pdf/renderer
-                invoice.signature ? (
-                  <Image
-                    src={invoice.signature}
-                    style={{
-                      width: '360px',
-                      maxHeight: '360px',
-                    }}
-                  />
-                ) : null
+                <Image src="/bt-signature.png" style={{ width: '360px', maxHeight: '360px' }} />
               ) : (
-                // For edit mode, use the EditableFileImage component
-                <EditableFileImage
-                  className="signature-image"
-                  placeholder="BT Repair Signature"
-                  value={invoice.signature || ''}
-                  width={350}
-                  pdfMode={false}
-                  onChangeImage={(value) => handleChange('signature', value)}
-                />
+                <img src="/bt-signature.png" alt="BT Repair Signature" style={{ maxWidth: '350px', maxHeight: '100px', display: 'block' }} />
               )}
             </View>
             

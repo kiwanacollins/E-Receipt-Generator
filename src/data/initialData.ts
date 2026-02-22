@@ -45,7 +45,7 @@ export const initialInvoice: Invoice = {
   totalLabel: 'TOTAL',
   currency: '$',
   notesLabel: 'Quality Service is our Priority',
-  notes: 'Dealers in all kinds of Original Electronics, Original Mobile Devices Repairs, Computer Services, Ipads, Programming, Software updates, Phone accessories, flashing and Unlocking and Sales of all Original Mobile Devices.',
+  notes: 'We specialize in the sale and repair of original electronic devices, including mobile phones, computers, and iPads. Our services cover professional device repairs, software updates, programming, flashing, unlocking, phone accessories, and the supply of genuine mobile devices',
   termLabel: 'Terms & Conditions',
   term: 'Phone should not go beyond 3 Months in a repair centre. Your device is our dedication.',
   signature: '', // Initialize with empty string

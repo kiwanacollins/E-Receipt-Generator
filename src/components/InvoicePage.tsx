@@ -199,15 +199,11 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
 
         <View className="flex header-flex" pdfMode={pdfMode}>
           <View className="w-50" pdfMode={pdfMode}>
-            <EditableFileImage
-              className="logo"
-              placeholder="Your Logo"
-              value={invoice.logo} 
-              width={invoice.logoWidth}
-              pdfMode={pdfMode}
-              onChangeImage={(value) => handleChange('logo', value)}
-              onChangeWidth={(value) => handleChange('logoWidth', value)}
-            />
+            {pdfMode ? (
+              <Image src="/bt-prepair-logo.png" style={{ width: '100px' }} />
+            ) : (
+              <img src="/bt-prepair-logo.png" alt="BT Repair Logo" style={{ maxWidth: '100px', display: 'block' }} />
+            )}
             <Text 
               className="bold fs-20 red"
               pdfMode={pdfMode}
@@ -215,18 +211,9 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               BT REPAIR CENTRE
             </Text>
 
-               <View className="mt-20" pdfMode={pdfMode}>
-          <Text className="bold mb-5 fs-16 red" pdfMode={pdfMode}>Quality Service is our Priority</Text>
-          <Text className="mb-10 fs-12" pdfMode={pdfMode}>
-            Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads,
-            Programming, Software updates,
-            Phone accessories, flashing and unlocking and Sales of all Mobile Devices.
-          </Text>
-        </View>
-
             {/* Other commented inputs */}
           </View>
-          
+
           {/* Fixed the closing div to View */}
           <View className="w-50" pdfMode={pdfMode}>
             <Text className="fs-45 right bold" pdfMode={pdfMode}>
@@ -274,7 +261,12 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           </View>
         </View>
 
-        
+        <View className="mt-10" pdfMode={pdfMode}>
+          <Text className="bold mb-5 fs-16 red" pdfMode={pdfMode}>Quality Service is our Priority</Text>
+          <Text className="mb-10 fs-12" pdfMode={pdfMode}>
+            We specialize in the sale and repair of original electronic devices, including mobile phones, computers, and iPads. Our services cover professional device repairs, software updates, programming, flashing, unlocking, phone accessories, and the supply of genuine mobile devices.
+          </Text>
+        </View>
 
         <View className="flex mt-40" pdfMode={pdfMode}>
           <View className="w-55" pdfMode={pdfMode}>

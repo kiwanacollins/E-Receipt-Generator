@@ -11,7 +11,7 @@ export default defineConfig({
       devOptions: {
         enabled: true
       },
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'bt-prepair-logo.png'],
       manifest: {
         name: 'BT Repair Centre',
         short_name: 'BT Repair',
@@ -22,14 +22,16 @@ export default defineConfig({
         background_color: '#ffffff',
         icons: [
           {
-            src: 'logo192.png',
+            src: 'bt-prepair-logo.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           },
           {
-            src: 'logo512.png',
+            src: 'bt-prepair-logo.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ]
       }

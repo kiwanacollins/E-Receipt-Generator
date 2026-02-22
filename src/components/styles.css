@@ -1,4 +1,7 @@
 /* Additional styles for our components */
+.mt-n5 {
+  margin-top: -5px;
+}
 .border-box {
   border: 2px solid #333;
   border-radius: 5px;

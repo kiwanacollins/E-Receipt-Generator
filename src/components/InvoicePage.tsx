@@ -577,7 +577,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           </View>
     
           <View 
-            className="signature-container border-box mt-5 max-width-300"
+            className="signature-container border-box mt-n5 max-width-300"
             pdfMode={pdfMode}
           >
             <Text 

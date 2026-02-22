@@ -210,7 +210,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               <img src="/bt-prepair-logo.png" alt="BT Repair Logo" style={{ maxWidth: '100px', display: 'block' }} />
             )}
             <Text 
-              className="bold fs-20 red"
+              className="bold fs-20 blue"
               pdfMode={pdfMode}
             >
               BT REPAIR CENTRE
@@ -271,7 +271,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
         </View>
 
         <View className="mt-10" pdfMode={pdfMode}>
-          <Text className="bold mb-5 fs-16 red" pdfMode={pdfMode}>Quality Service is our Priority</Text>
+          <Text className="bold mb-5 fs-16 blue" pdfMode={pdfMode}>Quality Service is our Priority</Text>
           <Text className="mb-10 fs-12" pdfMode={pdfMode}>
             We specialize in the sale and repair of original electronic devices, including mobile phones, computers, and iPads. Our services cover professional device repairs, software updates, programming, flashing, unlocking, phone accessories, and the supply of genuine mobile devices.
           </Text>
@@ -471,69 +471,24 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           )
         })}
 
-        <View className="flex" pdfMode={pdfMode}>
-          <View className="w-50 mt-10" pdfMode={pdfMode}>
-            {!pdfMode && (
-              <button className="link" onClick={handleAdd}>
-                <span className="icon icon-add bg-green mr-10"></span>
-                Add Line Item
-              </button>
+        <View className="mt-10" pdfMode={pdfMode}>
+          {!pdfMode && (
+            <button className="link" onClick={handleAdd}>
+              <span className="icon icon-add bg-green mr-10"></span>
+              Add Line Item
+            </button>
+          )}
+        </View>
+
+        <View className="flex bg-gray p-5 total-row mt-10" pdfMode={pdfMode}>
+          <Text className="bold p-5" pdfMode={pdfMode}>Total</Text>
+          <Text className="bold p-5 ml-30" pdfMode={pdfMode}>UGX</Text>
+          <Text className="right bold dark p-5" pdfMode={pdfMode}>
+            {(typeof subTotal !== 'undefined' && typeof saleTax !== 'undefined'
+              ? Math.round(subTotal).toLocaleString()
+              : '0'
             )}
-          </View>
-          <View className="w-50 mt-20" pdfMode={pdfMode}>
-            {/* <View className="flex" pdfMode={pdfMode}>
-              <View className="w-50 p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.subTotalLabel}
-                  // onChange={(value) => handleChange('subTotalLabel', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-              <View className="w-50 p-5" pdfMode={pdfMode}>
-                <Text className="right bold dark" pdfMode={pdfMode}>
-                  {subTotal?.toFixed(2)}
-                </Text>
-              </View>
-            </View> */}
-            {/* <View className="flex" pdfMode={pdfMode}>
-              <View className="w-50 p-5" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.taxLabel}
-                  onChange={(value) => handleChange('taxLabel', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-              <View className="w-50 p-5" pdfMode={pdfMode}>
-                <Text className="right bold dark" pdfMode={pdfMode}>
-                  {saleTax?.toFixed(2)}
-                </Text>
-              </View>
-            </View> */}
-            <View className="flex bg-gray p-5" pdfMode={pdfMode}>
-              <View className="w-50 p-5" pdfMode={pdfMode}>
-                <Text 
-              className="bold mb-5"
-              pdfMode={pdfMode}
-            >
-             Total
-            </Text>
-              </View>
-              <View className="w-50 p-5 flex" pdfMode={pdfMode}>
-                <Text 
-              className="bold mb-5"
-              pdfMode={pdfMode}
-            >
-             UGX
-            </Text>
-                <Text className="right bold dark w-auto" pdfMode={pdfMode}>
-                  {(typeof subTotal !== 'undefined' && typeof saleTax !== 'undefined'
-                    ? Math.round(subTotal)
-                    : 0
-                  ).toString()}
-                </Text>
-              </View>
-            </View>
-          </View>
+          </Text>
         </View>
 
         {/* Add the amount in words section */}

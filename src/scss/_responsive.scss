@@ -55,39 +55,42 @@
     width: 100% !important;
   }
 
-  // Restore table column widths inside product rows so they stay side-by-side
-  .row.flex {
-    flex-wrap: nowrap;
-
-    .w-48 {
-      width: 48% !important;
-    }
-    .w-17 {
-      width: 17% !important;
-    }
-    .w-18 {
-      width: 18% !important;
-    }
-  }
-
-  // Table header row — keep columns side by side
+  // Table rows — reduce font size and allow number columns to shrink
+  .row.flex,
   .mt-30.bg-blue.flex {
     flex-wrap: nowrap;
+    font-size: 11px;
 
     .w-48 {
-      width: 48% !important;
+      width: 44% !important;
+      min-width: 0;
     }
     .w-17 {
-      width: 17% !important;
+      width: 18% !important;
+      min-width: 0;
+      word-break: break-all;
+      overflow-wrap: break-word;
     }
     .w-18 {
-      width: 18% !important;
+      width: 20% !important;
+      min-width: 0;
+      word-break: break-all;
+      overflow-wrap: break-word;
+    }
+
+    input {
+      font-size: 11px !important;
+      word-break: break-all;
+      overflow-wrap: break-word;
     }
   }
 
-  // Totals section — keep side by side
-  .bg-gray.flex .w-50 {
-    width: 50% !important;
+  // Total row — single horizontal line: Total | UGX | amount
+  .total-row {
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
   }
 
   // Footer: keep address columns in a wrapping row

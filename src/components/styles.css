@@ -71,3 +71,24 @@
 .max-width-300 {
   max-width: 300px;
 }
+
+/* Break long numbers in table cells */
+.view.w-18,
+.view.w-17 {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.view.w-18 input,
+.view.w-17 input {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* Total row amount */
+.view.w-50 .right.bold.dark {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}

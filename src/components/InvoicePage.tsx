@@ -221,9 +221,13 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
 
           {/* Fixed the closing div to View */}
           <View className="w-50" pdfMode={pdfMode}>
-            <Text className="fs-45 right bold" pdfMode={pdfMode}>
-              RECEIPT/INVOICE
-            </Text>
+            <EditableInput
+              className="fs-45 right bold"
+              placeholder="RECEIPT/INVOICE"
+              value={invoice.title}
+              onChange={(value) => handleChange('title', value)}
+              pdfMode={pdfMode}
+            />
 
             
           <View className="mt-10" pdfMode={pdfMode}></View>

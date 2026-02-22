@@ -32,7 +32,7 @@ interface Props {
 }
 
 const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
-  const dateFormat = 'MMM dd, yyyy'
+  const dateFormat = 'dd MMM yyyy'
   const todayFormatted = format(new Date(), dateFormat)
 
   const [invoice, setInvoice] = useState<Invoice>(() => {
@@ -566,7 +566,8 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               <Text className="bold fs-12 right" pdfMode={pdfMode}>Kampala Uganda</Text>
             </View>
             <View className="flex-1" pdfMode={pdfMode}>
-              <Text className="bold fs-12 center" pdfMode={pdfMode}>Tel:</Text>
+              <View className="border-top mb-5" pdfMode={pdfMode}/>
+              <Text className="bold fs-16 center" pdfMode={pdfMode}>Tel:</Text>
                <Text className="bold fs-12 center" pdfMode={pdfMode}>256 772 560 792</Text>
                <Text className="bold fs-12 center" pdfMode={pdfMode}>+256 702 560 792</Text>
               <Text className="bold fs-12 center" pdfMode={pdfMode}>+256 200 933 371</Text>

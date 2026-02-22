@@ -1,5 +1,6 @@
 import InvoicePage from './components/InvoicePage'
 import { Invoice } from './data/types'
+import { initialInvoice } from './data/initialData'
 
 function App() {
   const savedInvoice = window.localStorage.getItem('invoiceData')
@@ -7,7 +8,8 @@ function App() {
 
   try {
     if (savedInvoice) {
-      data = JSON.parse(savedInvoice)
+      // Merge saved data with defaults so newly added fields get their default values
+      data = { ...initialInvoice, ...JSON.parse(savedInvoice) }
     }
   } catch (_e) {}
 

@@ -101,17 +101,27 @@
     max-width: 100% !important;
   }
 
+  // Keep header row (logo + title) side by side on mobile
+  .header-flex {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+    .w-50 {
+      width: 50% !important;
+    }
+  }
+
   // Font-size adjustments for small screens
   .fs-45 {
-    font-size: 28px !important;
+    font-size: 18px !important;
   }
 
   .fs-30 {
-    font-size: 22px !important;
+    font-size: 20px !important;
   }
 
   .fs-20 {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
 
   // Reduce top margins slightly to save vertical space

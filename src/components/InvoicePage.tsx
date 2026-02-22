@@ -197,7 +197,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
       <Page className="invoice-wrapper" pdfMode={pdfMode}>
         {!pdfMode && <Download data={invoice} setData={(d) => setInvoice(d)} />}
 
-        <View className="flex" pdfMode={pdfMode}>
+        <View className="flex header-flex" pdfMode={pdfMode}>
           <View className="w-50" pdfMode={pdfMode}>
             <EditableFileImage
               className="logo"
@@ -220,7 +220,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           <Text className="mb-10 fs-12" pdfMode={pdfMode}>
             Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads,
             Programming, Software updates,
-            Phone accessories, flashing and unlocking and Sales of all Mobile Phones.
+            Phone accessories, flashing and unlocking and Sales of all Mobile Devices.
           </Text>
         </View>
 
@@ -229,13 +229,9 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           
           {/* Fixed the closing div to View */}
           <View className="w-50" pdfMode={pdfMode}>
-            <EditableInput
-              className="fs-45 right bold"
-              placeholder="Receipt/Invoice"
-              value={invoice.title}
-              onChange={(value) => handleChange('title', value)}
-              pdfMode={pdfMode}
-            />
+            <Text className="fs-45 right bold" pdfMode={pdfMode}>
+              RECEIPT/INVOICE
+            </Text>
 
             
           <View className="mt-10" pdfMode={pdfMode}></View>
@@ -244,48 +240,36 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             </Text>
             <View className="flex" pdfMode={pdfMode}>
               <View className="w-50 pr-10" pdfMode={pdfMode}>
-                {pdfMode && invoice.phoneImage1 ? (
-                  <Image
-                    src={invoice.phoneImage1}
-                    style={{
-                      width: '50px',
-                      maxHeight: '50px',
-                    }}
-                  />
+                {pdfMode ? (
+                  invoice.phoneImage1 ? (
+                    <Image src={invoice.phoneImage1} style={{ width: '100px', maxHeight: '100px' }} />
+                  ) : null
                 ) : (
-                  <EditableFileImage
-                    className="phone-image"
-                    placeholder="Upload Phone Image 1"
-                    value={invoice.phoneImage1 || ''}
-                    width={150}
-                    pdfMode={false}
-                    onChangeImage={(value) => handleChange('phoneImage1', value)}
-                  />
+                  invoice.phoneImage1 ? (
+                    <img
+                      src={invoice.phoneImage1}
+                      alt="Phone Brand 1"
+                      style={{ maxWidth: '160px', maxHeight: '100px', display: 'block' }}
+                    />
+                  ) : null
                 )}
               </View>
               <View className="w-50" pdfMode={pdfMode}>
-                {pdfMode && invoice.phoneImage2 ? (
-                  <Image
-                    src={invoice.phoneImage2}
-                    style={{
-                      width: '50px',
-                      maxHeight: '50px',
-                    }}
-                  />
+                {pdfMode ? (
+                  invoice.phoneImage2 ? (
+                    <Image src={invoice.phoneImage2} style={{ width: '100px', maxHeight: '100px' }} />
+                  ) : null
                 ) : (
-                  <EditableFileImage
-                    className="phone-image"
-                    placeholder="Upload Phone Image 2"
-                    value={invoice.phoneImage2 || ''}
-                    width={150}
-                    pdfMode={false}
-                    onChangeImage={(value) => handleChange('phoneImage2', value)}
-                  />
+                  invoice.phoneImage2 ? (
+                    <img
+                      src={invoice.phoneImage2}
+                      alt="Phone Brand 2"
+                      style={{ maxWidth: '160px', maxHeight: '100px', display: 'block' }}
+                    />
+                  ) : null
                 )}
+              </View>
             </View>
-
-
-          </View>
 
           </View>
         </View>

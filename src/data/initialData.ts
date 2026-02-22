@@ -9,7 +9,7 @@ export const initialProductLine: ProductLine = {
 export const initialInvoice: Invoice = {
   logo: '',
   logoWidth: 100,
-  title: 'Receipt/Invoice',
+  title: 'RECEIPT/INVOICE',
   companyName: '',
   name: '',
   companyAddress: '',
@@ -45,8 +45,10 @@ export const initialInvoice: Invoice = {
   totalLabel: 'TOTAL',
   currency: '$',
   notesLabel: 'Quality Service is our Priority',
-  notes: 'Dealers in all kinds of Electronics, Mobile Phones Repairs, Computer Services, Ipads, Programming, Software updates, Phone accessories, flashing and unlocking and Sales of all Mobile Phones.',
+  notes: 'Dealers in all kinds of Original Electronics, Original Mobile Devices Repairs, Computer Services, Ipads, Programming, Software updates, Phone accessories, flashing and Unlocking and Sales of all Original Mobile Devices.',
   termLabel: 'Terms & Conditions',
   term: 'Phone should not go beyond 3 Months in a repair centre. Your device is our dedication.',
   signature: '', // Initialize with empty string
+  phoneImage1: '/apple-logo.png',
+  phoneImage2: '/hp-logo.png',
 }
